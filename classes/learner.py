@@ -26,6 +26,7 @@ class Learner():
         self.memory = ReplayMemory(memory_size)
 
         self.optimizer = optimizer(self.policy_net.parameters())
+        #self.optimizer = optim.Adam(self.policy_net.parameters(), lr=0.01)
         self.loss_func = loss_func
 
         self.constants = constants
@@ -41,10 +42,15 @@ class Learner():
             math.exp(-1. * self.steps_done / self.constants["EPS_DECAY"])
         if increment:
             self.steps_done += 1
+        #print("SAMPLE: ", sample)
+        #print("EPS Thres: ", eps_threshold)
         if sample > eps_threshold:
+            #print("Using Net")
             with torch.no_grad():
+
                 return self.policy_net(state).max(1)[1].view(1, 1)
         else:
+            #print("Sampling")
             return torch.tensor([[random.randrange(2)]], device=device, dtype=torch.long)
 
     def optimize_model(self):
