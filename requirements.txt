@@ -178,7 +178,7 @@ python-twitter==3.4.2
 pytypes==1.0b4
 pytz==2017.3
 PyWavelets==0.5.2
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==16.0.3
 QtAwesome==0.4.4
 qtconsole==4.3.1
