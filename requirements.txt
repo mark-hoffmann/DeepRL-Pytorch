@@ -172,7 +172,7 @@ pyparsing==2.2.0
 PySocks==1.6.7
 pytest==3.3.2
 python-dateutil==2.6.1
-python-ldap==3.1.0
+python-ldap==3.4.0
 python-magic==0.4.15
 python-twitter==3.4.2
 pytypes==1.0b4
